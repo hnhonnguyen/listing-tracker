@@ -1,0 +1,20 @@
+# Demo config: books.toscrape.com is a site built for scraping practice.
+name: books-toscrape
+base_url: https://books.toscrape.com
+currency: GBP
+delay_seconds: 1.0
+
+pagination:
+  url_template: "https://books.toscrape.com/catalogue/page-{page}.html"
+  start_page: 1
+  max_pages: 3
+
+selectors:
+  item: "article.product_pod"
+  title: "h3 a"
+  title_attr: "title"
+  price: "p.price_color"
+  url: "h3 a"
+  url_attr: "href"
+
+id_regex: "_([0-9]+)/index\\.html$"
